@@ -1,1 +1,1 @@
-# Covid-Stats
+In my opinion the assignment wasn't as hard as i thought it would be, Collabrating as a team made thing go ten times smoother than normal and the graph.js was alot of help it would have been annoying to try and implement our own graph and get the extra options of graph.js it made the graph responsive on it's own and the multiple graph types, While the APIs themselves were a bit of a hassle to setup and deal with having some issues and needing a proxy server Overall there wasn't something that difficult to add to the page nor anything too complicated
