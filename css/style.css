@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Corinthia&display=swap");
+@font-face {
+  font-family: "Terraria";
+  src: url("/Fonts/ANDYB.TTF") format("truetype");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Readex Pro", sans-serif;
+  font-family: "Terraria", sans-serif;
 }
 .title {
   display: flex;
@@ -35,7 +37,6 @@
 .custom-select {
   margin-left: 1rem;
   position: relative;
-  font-family: Arial;
   width: 10%;
   min-width: 10rem;
   border: 1px solid var(--select-border);
@@ -69,7 +70,6 @@
   padding: 0 1em 0 0;
   margin: 0;
   width: 100%;
-  font-family: inherit;
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
@@ -89,12 +89,13 @@
 }
 .btn-container {
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
 }
 .btn-container button {
   background: #333;
-  color: #fff;
+  color: gold;
   border: gray 2px solid;
   padding: 0.5rem;
   margin: 0 0.5rem;
@@ -106,11 +107,50 @@
 
 @keyframes fadeIn {
   from {
-    transform: translateY(-30%);
+    transform: rotateX(-180deg);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: rotateX(0);
     opacity: 1;
+  }
+}
+.total-pop {
+  padding: 0.5rem;
+}
+@media (max-width: 500px) {
+  .total-pop {
+    font-size: 0.6rem;
+  }
+  .btn-container button {
+    padding: 0.25rem;
+  }
+  .custom-select {
+    font-size: 0.8rem;
+  }
+  h3 {
+    font-size: 0.9rem;
+  }
+  .chart-container {
+    width: 100%;
+    height: 50vh;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  .total-pop {
+    font-size: 1rem;
+  }
+  .btn-container button {
+    padding: 0.5rem;
+  }
+  .custom-select {
+    font-size: 1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  .chart-container {
+    width: 100%;
+    height: 600px;
   }
 }

@@ -5,13 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COVID-19</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/78fb10cff2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="CSS/style.css" />
   </head>
 
   <body>
     <div class="animation-container">
       <header class="title">
-        <h2>COVID-Tracker</h2>
+        <h2>COVID-Stats</h2>
       </header>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.min.js"></script>
       <div class="chart-container">
@@ -37,10 +41,11 @@
           <button class="btnEurope" type="button" data-region="europe">
             Europe
           </button>
+          <p class="total-pop">Total Population Of Selected Region :</p>
         </div>
         <div class="custom-select">
           <select name="country" id="country">
-            <option value="none" hidden>Select a Country</option>
+            <option value="none" hidden>Pick a Country's Stats</option>
           </select>
         </div>
       </div>
@@ -56,7 +61,7 @@
         </div>
       </div>
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-      <script src="js/index.js"></script>
+      <script src="JS/index.js"></script>
     </div>
   </body>
 </html>

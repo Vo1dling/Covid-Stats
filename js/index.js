@@ -4,30 +4,35 @@ const regions = {
     confirmed: 0,
     recovered: 0,
     critical: 0,
+    population: 0,
   },
   africa: {
     deaths: 0,
     confirmed: 0,
     recovered: 0,
     critical: 0,
+    population: 0,
   },
   americas: {
     deaths: 0,
     confirmed: 0,
     recovered: 0,
     critical: 0,
+    population: 0,
   },
   europe: {
     deaths: 0,
     confirmed: 0,
     recovered: 0,
     critical: 0,
+    population: 0,
   },
   asia: {
     deaths: 0,
     confirmed: 0,
     recovered: 0,
     critical: 0,
+    population: 0,
   },
 };
 const currentCountry = {
@@ -44,7 +49,7 @@ const btnEurope = document.querySelector(".btnEurope");
 const ctx = document.getElementById("myChart");
 
 let myChart = "";
-Chart.defaults.font.family = "Readex Pro";
+Chart.defaults.font.family = "Terraria";
 const generateChart = (resData, type) => {
   const data = [
     resData.deaths,
@@ -61,8 +66,8 @@ const generateChart = (resData, type) => {
         {
           label: "# of Cases",
           data: data,
-          backgroundColor: ["#3338", "#fb58", "#2f28", "#f558"],
-          borderColor: ["#333", "#fb5", "#2f2", "#f55"],
+          backgroundColor: ["#3339", "#0069", "#2f29", "#f009"],
+          borderColor: ["#333", "#fb5", "#2f2", "#f00"],
           borderWidth: 1,
         },
       ],
@@ -80,13 +85,18 @@ const generateChart = (resData, type) => {
     myChart.options.scales.y.display = false;
     myChart.update();
   }
+  document.querySelector(
+    ".total-pop"
+  ).innerText = `Total Population Of Selected Region : ${resData.population}`;
 };
 const getRegionData = async (data, region) => {
   let data2 = [];
   const baseURLCovid = "https://corona-api.com/countries";
+  population = 0;
   if (region !== "world") {
     data.data.forEach((country, index) => {
       axios.get(`${baseURLCovid}/${country.cca2}`).then((response) => {
+        regions[region].population += response.data.data.population;
         regions[region].deaths += response.data.data.latest_data.deaths;
         regions[region].confirmed += response.data.data.latest_data.confirmed;
         regions[region].recovered += response.data.data.latest_data.recovered;
@@ -100,6 +110,8 @@ const getRegionData = async (data, region) => {
       },
     ]);
     countries.data.data.forEach((country) => {
+      regions.world.population += country.population;
+      console.log(country);
       regions.world.deaths += country.latest_data.deaths;
       regions.world.confirmed += country.latest_data.confirmed;
       regions.world.recovered += country.latest_data.recovered;
@@ -157,6 +169,10 @@ const changeData = async () => {
   const data = await axios.get(baseURL + countrySelect.value);
   console.log(data);
   generateChart(data.data.data.latest_data, myChart.config._config.type);
+  population = data.data.data.population;
+  document.querySelector(
+    ".total-pop"
+  ).innerText = `Total Population Of Selected Region : ${population}`;
   buttonsList.forEach((btn) => {
     btn.id = "";
   });
