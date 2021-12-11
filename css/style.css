@@ -14,6 +14,9 @@
   width: 100%;
   background: rgb(153, 187, 238);
 }
+body {
+  background-color: rgb(150, 150, 150);
+}
 .animation-container {
   animation: fadeIn 3.5s ease 0s 1 forwards;
   position: relative;
@@ -32,7 +35,7 @@
 .chart-type-select {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
+  margin-left: 1.5rem;
 }
 .custom-select {
   margin-left: 1rem;
@@ -46,7 +49,7 @@
   cursor: pointer;
   line-height: 1.1;
   background-color: rgb(153, 187, 238);
-  border: 1px solid black;
+  border: 1px solid gray;
   display: grid;
   grid-template-areas: "select";
   align-items: center;
@@ -62,6 +65,7 @@
 .custom-select select,
 .custom-select::after {
   grid-area: select;
+  color: rgb(219, 219, 0);
 }
 .custom-select select {
   appearance: none;
@@ -104,7 +108,10 @@
 .btn-container button:active {
   background: #666;
 }
-
+.Dot {
+  display: flex;
+  justify-content: center;
+}
 @keyframes fadeIn {
   from {
     transform: rotateX(-180deg);
@@ -134,6 +141,13 @@
   .chart-container {
     width: 100%;
     height: 50vh;
+  }
+  .Dot {
+    flex-direction: column;
+  }
+  .chart-type-select {
+    margin-top: 1.5rem;
+    margin-left: 0;
   }
 }
 @media (min-width: 501px) and (max-width: 768px) {

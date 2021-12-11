@@ -67,7 +67,7 @@ const generateChart = (resData, type) => {
           label: "# of Cases",
           data: data,
           backgroundColor: ["#3339", "#0069", "#2f29", "#f009"],
-          borderColor: ["#333", "#fb5", "#2f2", "#f00"],
+          borderColor: ["#333", "#006", "#2f2", "#f00"],
           borderWidth: 1,
         },
       ],

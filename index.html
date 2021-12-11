@@ -43,23 +43,27 @@
           </button>
           <p class="total-pop">Total Population Of Selected Region :</p>
         </div>
-        <div class="custom-select">
-          <select name="country" id="country">
-            <option value="none" hidden>Pick a Country's Stats</option>
-          </select>
+        <div class="Dot">
+          <div class="custom-select">
+            <select name="country" id="country">
+              <option value="none" hidden>Pick a Country's Stats</option>
+            </select>
+          </div>
+
+          <div class="chart-type-select">
+            <h3>Chart Type</h3>
+            <div class="custom-select">
+              <select name="chart-type" id="chart-type">
+                <option value="bar">Bar</option>
+                <option value="pie">Pie</option>
+                <option value="doughnut">Doughnut</option>
+              </select>
+              <span class="focus"></span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="chart-type-select">
-        <h3>Chart Type</h3>
-        <div class="custom-select">
-          <select name="chart-type" id="chart-type">
-            <option value="bar">Bar</option>
-            <option value="pie">Pie</option>
-            <option value="doughnut">Doughnut</option>
-          </select>
-          <span class="focus"></span>
-        </div>
-      </div>
+
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script src="JS/index.js"></script>
     </div>
